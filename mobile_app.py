@@ -38,7 +38,7 @@ def main(page: ft.Page):
     def build_peer_tile(name, time_str):
         return ft.Container(
             content=ft.Row([
-                ft.Icon(name=ft.Icons.PERSON, color="#8B5CF6"), # ✨ Capital 'Icons' fixes the crash completely!
+                ft.Icon(ft.Icons.PERSON, color="#8B5CF6"), # ✨ Pass the icon directly without 'name='!
                 ft.Column([
                     ft.Text(name, size=14, weight=ft.FontWeight.BOLD, color="white"),
                     ft.Text(time_str, size=11, color="#64748B")
@@ -47,7 +47,7 @@ def main(page: ft.Page):
             padding=12,
             border_radius=12,
             bgcolor="#1A2333"
-        )
+    )
 
     peer_list = ft.Column([
         build_peer_tile("Rahul K.", "Focus State: 45m"),
