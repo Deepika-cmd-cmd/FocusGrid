@@ -19,11 +19,11 @@ def main(page: ft.Page):
             ft.Text("Status: In Flow State", size=14, color="#A855F7"),
             ft.Divider(color="#202A3F"),
             ft.ElevatedButton(
-                text="🚪 Check-Out of Grid",
-                color="white",
+                content=ft.Text("🚪 Check-Out of Grid", color="white"),  # <--- Wrapped inside ft.Text assigned to content
                 bgcolor="#8B5CF6",
                 style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=12)),
                 width=250
+        
             )
         ], alignment=ft.MainAxisAlignment.CENTER, horizontal_alignment=ft.CrossAxisAlignment.CENTER),
         padding=25,
@@ -38,7 +38,7 @@ def main(page: ft.Page):
     def build_peer_tile(name, time_str):
         return ft.Container(
             content=ft.Row([
-                ft.Icon(name=ft.icons.PERSON, color="#8B5CF6"),
+                ft.Icon(name=ft.Icons.PERSON, color="#8B5CF6"), # ✨ Capital 'Icons' fixes the crash completely!
                 ft.Column([
                     ft.Text(name, size=14, weight=ft.FontWeight.BOLD, color="white"),
                     ft.Text(time_str, size=11, color="#64748B")
